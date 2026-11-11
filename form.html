@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engaged Learning Student Feedback</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <main>
+        <h1>Engaged Learning Student Feedback Form</h1>
+
+        <p class="intro">
+            Share your engaged learning experience to help
+            improve resources and support for UMSI students.
+        </p>
+
+        <!-- Step 1: Form uncommented and connected to Formspree.
+             Replace YOUR_FORM_ID with the ID from your own Formspree form. -->
+        <form action="https://formspree.io/f/YOUR_FORM_ID" method="post">
+
+            <!-- Step 5: Tell users how required fields are marked -->
+            <p class="required-note">
+                Required fields are marked with an asterisk
+                <span class="required" aria-hidden="true">*</span>.
+            </p>
+
+            <fieldset>
+                <legend>Student Information</legend>
+
+                <!-- Steps 2 & 3: every label's "for" matches its input's "id",
+                     and every field has a meaningful "name" -->
+                <label for="first-name">
+                    First Name <span class="required" aria-hidden="true">*</span>
+                </label>
+                <input type="text" id="first-name" name="first-name"
+                       autocomplete="given-name" required>
+
+                <label for="last-name">
+                    Last Name <span class="required" aria-hidden="true">*</span>
+                </label>
+                <input type="text" id="last-name" name="last-name"
+                       autocomplete="family-name" required>
+
+                <!-- Step 6a: type="email" instead of type="text" -->
+                <label for="email">
+                    Email Address <span class="required" aria-hidden="true">*</span>
+                </label>
+                <input type="email" id="email" name="email"
+                       autocomplete="email" required>
+
+                <!-- Step 5c: empty-value default prompt so "required" works -->
+                <label for="program">
+                    Academic Program <span class="required" aria-hidden="true">*</span>
+                </label>
+                <select id="program" name="program" required>
+                    <option value="" selected>-- Select your program --</option>
+                    <option value="bsi">BSI (Bachelor of Science in Information)</option>
+                    <option value="msi">MSI (Master of Science in Information)</option>
+                    <option value="mhi">MHI (Master of Health Informatics)</option>
+                    <option value="phd">PhD in Information</option>
+                    <option value="other">Other</option>
+                </select>
+            </fieldset>
+
+            <!-- Step 4: radio buttons grouped with fieldset + legend.
+                 Step 7a: each radio + label wrapped in a div for Flexbox -->
+            <fieldset class="radio-group">
+                <legend>
+                    Current or Most Recent Project Stage
+                    <span class="required" aria-hidden="true">*</span>
+                </legend>
+
+                <div class="radio-option">
+                    <input type="radio" id="preparing"
+                           name="stage" value="preparing" required>
+                    <label for="preparing">Preparing for the Experience</label>
+                </div>
+
+                <div class="radio-option">
+                    <input type="radio" id="starting"
+                           name="stage" value="starting">
+                    <label for="starting">Starting the Experience</label>
+                </div>
+
+                <div class="radio-option">
+                    <input type="radio" id="during"
+                           name="stage" value="during">
+                    <label for="during">During the Experience</label>
+                </div>
+
+                <div class="radio-option">
+                    <input type="radio" id="ending"
+                           name="stage" value="ending">
+                    <label for="ending">Ending the Experience</label>
+                </div>
+
+                <div class="radio-option">
+                    <input type="radio" id="after"
+                           name="stage" value="after">
+                    <label for="after">After the Experience</label>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Your Feedback</legend>
+
+                <!-- Step 6b: optional Project Start Date using type="date" -->
+                <label for="start-date">
+                    Project Start Date <span class="optional">(optional)</span>
+                </label>
+                <input type="date" id="start-date" name="start-date">
+
+                <label for="feedback">
+                    Your Feedback <span class="required" aria-hidden="true">*</span>
+                </label>
+                <textarea id="feedback" name="feedback" rows="5" required></textarea>
+            </fieldset>
+
+            <input type="submit" value="Submit Feedback">
+
+        </form>
+    </main>
+</body>
+
+</html>
